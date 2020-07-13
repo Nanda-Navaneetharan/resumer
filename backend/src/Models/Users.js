@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 
-
 const usersSchema = new mongoose.Schema({
     access_code: {
         type: String,
@@ -39,7 +38,7 @@ const usersSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             required: true,
             //TODO: change ref to mongodb collection name and not filename
-            ref: 'Addresses'
+            ref:'addresses'
         }
     },
     sections: {
@@ -47,18 +46,18 @@ const usersSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             required: true,
             //TODO: change ref to mongodb collection name and not filename
-            ref: 'Sections'
+            ref:'sections'
         }
     }
-
 })
 
 //TODO: Comment the below, not needed, will un-comment if needed later
-usersSchema.virtual(['adresses', 'skills', 'workexperiences', 'education', 'sections', 'additionalskills'], {
-    ref: ['Addresses', 'Skills', 'WorkExperiences', 'Education', 'Sections', 'AdditionalSkills'],
-    localField: '_id',
-    foreignField: 'user_id'
-})
+// usersSchema.virtual(['adresses', 'skills', 'workexperiences', 'education', 'sections', 'additionalskills'], {
+//     ref: ['Addresses', 'Skills', 'WorkExperiences', 'Education', 'Sections', 'AdditionalSkills'],
+//     localField: '_id',
+//     foreignField: 'user_id'
+// })
 
 const Users = mongoose.model('Users', usersSchema)
+mongoose.model()
 module.exports = Users

@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
 const additionalSectionsSchema = new mongoose.Schema({
-    user_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
+    user_id:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
         //TODO: change ref to mongodb collection name and not filename      
-        ref: 'Users'
+        ref:'users'
     },
     //TODO: additional_Section will not be an array
     //Sample data(document) for additional_section
@@ -15,26 +15,26 @@ const additionalSectionsSchema = new mongoose.Schema({
     //     list:["Playing the guitar","Reading novels"]     
     // }
     //CHANGE ACCORDINGLY !
-    additional_Section: [{
+    additional_Section:{
         title: {
-            type: String,
-            required: true,
-            trim: true
+            type:String,
+            required:true,
+            trim:true
         },
         list: [{
-            type: String,
-            required: true,
-            trim: true
+            type:String,
+            required:true,
+            trim:true
         }]
-    }]
+    }
 })
 
 //TODO: Comment the below, not needed, will un-comment if needed later
-additionalSectionsSchema.virtual('sections', {
-    ref: 'Sections',
-    localField: '_id',
-    foreignField: 'additional_sections_id'
-})
+// additionalSectionsSchema.virtual('sections', {
+//     ref: 'Sections',
+//     localField: '_id',
+//     foreignField: 'additional_sections_id'
+// })
 
 const AdditionalSections = mongoose.Model('AdditionalSections', additionalSectionsSchema)
 
