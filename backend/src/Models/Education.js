@@ -4,11 +4,9 @@ const educationSchema = new mongoose.Schema({
     user_id:{
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        //TODO: change ref to mongodb collection name and not filename      
         ref:'users'
     },
-    //TODO: field name must be lowercase      
-    Institute:{
+    institute:{
         type:String,
         required:true,
         trim:true
@@ -21,8 +19,7 @@ const educationSchema = new mongoose.Schema({
         type:Date,
         required:true
     },
-    //TODO: field name must be lowercase      
-    Score:{
+    score:{
         type:String,
         required:true,
         trim:true

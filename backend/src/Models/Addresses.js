@@ -4,7 +4,6 @@ const addressSchema = mongoose.Schema({
     user_id:{
         type:mongoose.Schema.Types.ObjectId,
         required:true,
-        //TODO: change ref to mongodb collection name and not filename      
         ref:'users'
     },
     house_number:{
@@ -51,6 +50,6 @@ const addressSchema = mongoose.Schema({
 //     foreignField: 'address_id'
 // })
 
-const Addresses = new mongoose.Model('Adresses', addressSchema)
+const Addresses = new mongoose.model('adresses', addressSchema)
 
 module.exports = Addresses

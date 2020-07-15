@@ -1,11 +1,12 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 
+
 const usersSchema = new mongoose.Schema({
     access_code: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
     },
     first_name: {
         type: String,
@@ -37,7 +38,6 @@ const usersSchema = new mongoose.Schema({
         address_id: {
             type: mongoose.Schema.Types.ObjectId,
             required: true,
-            //TODO: change ref to mongodb collection name and not filename
             ref:'addresses'
         }
     },
@@ -45,7 +45,6 @@ const usersSchema = new mongoose.Schema({
         section_id: {
             type: mongoose.Schema.Types.ObjectId,
             required: true,
-            //TODO: change ref to mongodb collection name and not filename
             ref:'sections'
         }
     }
@@ -58,6 +57,5 @@ const usersSchema = new mongoose.Schema({
 //     foreignField: 'user_id'
 // })
 
-const Users = mongoose.model('Users', usersSchema)
-mongoose.model()
+const Users = mongoose.model('users', usersSchema)
 module.exports = Users

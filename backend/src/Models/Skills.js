@@ -5,10 +5,8 @@ const skillsSchema = new mongoose.Schema({
     user_id:{
         type:mongoose.Schema.Types.ObjectId,
         required:true,
-        //TODO: change ref to mongodb collection name and not filename      
         ref:'users'
     },
-    //TODO: change field name to plural as it is an array of skills
     skills:[{
         skill_desc:{
             type:String,
