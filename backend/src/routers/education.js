@@ -20,7 +20,6 @@ router.post("/", async (req, res) => {
         res.send(education)
     } catch (error) {
         res.status(400).send(error)
-        console.log(error)
     }
 })
 /**
