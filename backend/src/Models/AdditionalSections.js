@@ -1,20 +1,23 @@
 const mongoose = require('mongoose')
 
 const additionalSectionsSchema = new mongoose.Schema({
-    user_id:{
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:'users'
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'users',
+        default: ""
     },
     title: {
-        type:String,
-        required:true,
-        trim:true
+        type: String,
+        required: true,
+        trim: true,
+        default: ""
     },
     list: [{
-        type:String,
-        required:true,
-        trim:true
+        type: String,
+        required: true,
+        trim: true,
+        default: ""
     }]
 })
 

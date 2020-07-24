@@ -2,21 +2,24 @@ const mongoose = require('mongoose')
 
 
 const skillsSchema = new mongoose.Schema({
-    user_id:{
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:'users'
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'users',
+        default: ""
     },
-    skills:[{
-        skill_desc:{
-            type:String,
-            required:true,
-            trim:true
+    skills: [{
+        skill_desc: {
+            type: String,
+            required: true,
+            trim: true,
+            default: ""
         },
-        rating:{
-            type:Number,
-            min:0,
-            max:5
+        rating: {
+            type: Number,
+            min: 0,
+            max: 5,
+            default: ""
         }
     }]
 })

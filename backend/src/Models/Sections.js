@@ -2,35 +2,41 @@ const mongoose = require('mongoose')
 
 const sectionSchema = new mongoose.Schema({
 
-    user_id:{
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:'users'
-    },
-    summary:{
-        type:String,
-        required:true,
-        trim:true
-    },
-    education_id:{
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:'education'
-    },
-    work_experiences_id: {
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:'workExperience'
-    },
-    skills_id:{
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:'skills'
-    },
-    additional_sections_id:[{
+    user_id: {
         type: mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:'additionalSections'
+        required: true,
+        ref: 'users',
+        default: ""
+    },
+    summary: {
+        type: String,
+        required: true,
+        trim: true,
+        default: ""
+    },
+    education_id: [{
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'education',
+        default: ""
+    }],
+    work_experiences_id: [{
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'workExperience',
+        default: ""
+    }],
+    skills_id: [{
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'skills',
+        default: ""
+    }],
+    additional_sections_id: [{
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'additionalSections',
+        default: ""
     }]
 })
 
@@ -41,6 +47,6 @@ const sectionSchema = new mongoose.Schema({
 //     foreignField: 'section_id'
 // })
 
-const Sections = mongoose.Model('Sections', sectionSchema)
+const Sections = mongoose.model('Sections', sectionSchema)
 
 module.exports = Sections

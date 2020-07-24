@@ -5,16 +5,18 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.22",
     "node": "^14.5.0",
     "nodemon": "^2.0.4",
+    "shortid": "^2.2.15",
     "validator": "^13.1.1"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
