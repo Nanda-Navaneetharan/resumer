@@ -1,33 +1,39 @@
 const mongoose = require('mongoose')
 
 const workExperiencesSchema = new mongoose.Schema({
-    user_id:{
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:'users'
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'users',
+        default: ""
     },
-    company:{
-        type:String,
-        required:true,
-        trim:true
+    company: {
+        type: String,
+        required: true,
+        trim: true,
+        default: ""
     },
-    from:{
-        type:Date,
-        required:true
+    from: {
+        type: Date,
+        required: true,
+        default: ""
     },
-    to:{
-        type:Date,
-        required:true
+    to: {
+        type: Date,
+        required: true,
+        default: ""
     },
-    role:{
-        type:String,
-        required:true,
-        trim:true
+    role: {
+        type: String,
+        required: true,
+        trim: true,
+        default: ""
     },
-    description:{
-        type:String,
-        required:true,
-        trim:true
+    description: {
+        type: String,
+        required: true,
+        trim: true,
+        default: ""
     }
 })
 

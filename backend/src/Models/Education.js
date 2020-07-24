@@ -1,29 +1,37 @@
 const mongoose = require('mongoose')
 
 const educationSchema = new mongoose.Schema({
-    user_id:{
+    user_id: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref:'users'
+        ref: 'users',
+        default: ""
     },
-    institute:{
-        type:String,
-        required:true,
-        trim:true
-    },
-    from:{
-        type:Date,
-        required:true,
-    },
-    to:{
-        type:Date,
-        required:true
-    },
-    score:{
-        type:String,
-        required:true,
-        trim:true
-    }
+    education_details: [{
+        institute: {
+            type: String,
+            required: true,
+            trim: true,
+            default: ""
+        },
+        from: {
+            type: Date,
+            required: true,
+            default: ""
+        },
+        to: {
+            type: Date,
+            required: true,
+            default: ""
+        },
+        score: {
+            type: String,
+            required: true,
+            trim: true,
+            default: ""
+        }
+    }],
+    default: [{}]
 })
 
 //TODO: Comment the below, not needed, will un-comment if needed later
@@ -33,5 +41,6 @@ const educationSchema = new mongoose.Schema({
 //     foreignField: 'education_id'
 // })
 
-const Education = new mongoose.Model('Education', educationSchema)
+const Education = new mongoose.model('education', educationSchema)
+
 module.exports = Education
