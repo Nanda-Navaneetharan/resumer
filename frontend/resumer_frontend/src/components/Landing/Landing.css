@@ -1,0 +1,23 @@
+.container{
+    display:flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+.new-user{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: black solid;
+}
+.existing-user>*{
+    margin-top:3%;
+}
+.existing-user{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

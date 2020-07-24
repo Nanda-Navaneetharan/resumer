@@ -3,7 +3,7 @@ class Authentication {
         this.isAuthenticated = false
     }
     login(successCallback, failureCallback) {
-        if (true) {
+        if (false) {
             this.isAuthenticated = true
             successCallback();
         }
